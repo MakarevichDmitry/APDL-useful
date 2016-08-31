@@ -1,0 +1,104 @@
+! Циклы
+*DO,i,ibegin,iend,istep
+
+*ENDDO
+	!
+*DOWHILE,z
+
+*ENDDO
+!
+! Неявный цикл
+(ibegin:iend:istep)
+!
+! Папки
+!{ ! И_С_Х_О_Д_Н_Ы_Е___Д_А_Н_Н_Ы_Е , К_О_Д
+
+!} ! (ВСЁ, что ВЫШЕ)
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Условие
+*IF,VAL1,Oper1,VAL2,Base1,VAL3,Oper2,VAL4,Base2
+
+*ELSEIF,VAL1,Oper1,VAL2,Base1,VAL3,Oper2,VAL4
+
+*ELSE
+
+*ENDIF
+	! примечание
+		Base1, Base2 = :label(8 символов, включая двоеточие), THEN, STOP, EXIT(то же что и *EXIT), CYCLE(то же что и *CYCLE), AND, OR, XOR
+		Oper1, Oper2 = EQ, NE, LT, GT, LE, GE, ABLT, ABGT
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! Создание макро файла
+*CREATE, Fname, Ext
+
+*END
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Определение Параметра
+*SET,Par,VALUE
+*AFUN,Lab
+! Определение Массива
+*DEL,Par,,NOPR
+*DIM,Par,Type,IMAX,JMAX,KMAX,Var1,Var2,Var3,CSYSID
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Извлечение информации о элементах
+*GET,Par,Entity,ENTNUM,Item1,IT1NUM,Item2,IT2NUM
+*VGET,ParR,Entity,ENTNUM,Item1,IT1NUM,Item2,IT2NUM,KLOOP
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Векторные Операции
+*VFUN,ParR,Func,Par1,CON1,CON2,CON3
+*VSCFUN,ParR,Func,Par1
+*VOPER,ParR,Par1,Oper,Par2,CON1,CON2
+*VFILL,ParR,Func,CON1,CON2,CON3
+*VITRP,ParR,ParT,ParI,ParJ,ParK
+!
+! Управление векторными и матричными операциями
+*VMASK,Par
+*VLEN,NROW,NINC
+*VCOL,NCOL1,NCOL2
+*VABS,KABSR,KABS1,KABS2,KABS3
+*VFACT,FACTR,FACT1,FACT2,FACT3
+!
+! Операции с Матрицами
+*MFUN,ParR,Func,Par1
+*MOPER,ParR,Par1,Oper,Par2,Par3,kDim,--,kOut,LIMIT
+*MFOURI,Oper,COEFF,MODE,ISYM,THETA,CURVE
+!
+! Операции с Таблицами
+*TOPER,ParR,Par1,Oper,Par2,FACT1,FACT2,CON1
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Запись информации в файл
+*CFOPEN,Fname,Ext,--,Loc         ! открытие файла
+*MWRITE,ParR,Fname,Ext,--,Label,n1,n2,n3
+(FORTRAN format)
+*VWRITE,Par1,Par2,Par3,...,PAR19 ! запись
+(FORTRAN format)                 ! строго в начале строки, без отступов в виде пробелов и табуляции
+*CFCLOS                          ! закрытие файла
+!
+! Считывание информации из файла
+*TREAD,Par,Fname,Ext,--,NSKIP
+*VREAD,ParR,Fname,Ext,--,Label,n1,n2,n3,NSKIP
+(FORTRAN format)                 ! строго в начале строки, без отступов в виде пробелов и табуляции
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! ЛСК
+!{ (KCS=(CART, CYLIN, SPHE, TORO))
+LOCAL,KCN,KCS,XC,YC,ZC,THXY,THYZ,THZX,Par1,Par2
+CLOCAL,KCN,KCS,XC,YC,ZC,THXY,THYZ,THZX,Par1,Par2
+CSKP,KCN,KCS,PORIG,PXAXS,PXYPL,Par1,Par2
+CS,KCN,KCS,NORIG,NXAX,NXYPL,Par1,Par2
+!}
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!
+! Запуск макросов
+/INPUT,Fname,Ext,--,LINE,LOG
+*use,Name,ARG1,ARG2,...,AR18
+!
+! Выбор составляющих модели (точки, линии, поверхности, объёмы, узлы, элементы)
+ FLST, NFIELD, NARG, TYPE, Otype, LENG
+FITEM, NFIELD, ITEM, ITEMY, ITEMZ
+ANSCMD, P51X
+
+
