@@ -1,0 +1,16 @@
+﻿
+*DEL, txt(1),, NOPR
+*DIM,txt,STRING,128,2
+
+
+txt(1,1)='sovsem_chut_chut_bolshe_chem_8'
+
+%txt(1,1)% =2
+txt(1,2) ='its_a_very_long_array_name' 
+*DIM, %txt(1,2)%, ARRAY, 10
+
+*use,q2.mac,%txt(1,1)%,2,%txt(1,2)%
+out=_RETURN
+
+
+

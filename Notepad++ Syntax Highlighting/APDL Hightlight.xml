@@ -1,0 +1,36 @@
+<NotepadPlus>
+    <UserLang name="ANSYS" ext="mac">
+        <Settings>
+            <Global caseIgnored="no" />
+            <TreatAsSymbol comment="no" commentLine="yes" />
+            <Prefix words1="no" words2="no" words3="no" words4="no" />
+        </Settings>
+        <KeywordLists>
+            <Keywords name="Delimiters">000000</Keywords>
+            <Keywords name="Folder+">*DO *DOWHILE *IF !{ *CREATE *CFOPEN</Keywords>
+            <Keywords name="Folder-">*ENDDO *ENDIF !} *END *CFCLOS</Keywords>
+            <Keywords name="Operators">&apos; - $ % ( ) , . : [ ] + &lt; = &gt;</Keywords>
+            <Keywords name="Comment">1 2 0! 0/COM 0C***</Keywords>
+            <Keywords name="Words1">LT ABLT DIST RATIO ORDE FITEM KEEP LINE CSYS LOCAL WPCSYS CLOCAL LOW lines_common par_l n_l GLOBAL ELEM par_e n_e UX ROTX FX MX SELTOL MIN MIND LMIN KX NX X XC THYZ A ELNEXT LSNEXT PRXY NINT ACOS LOG LOG10 ON NSUBST AUTOTS TIME LLIST ibegin VAL2 VAL4 CON1 CON2 CON3 Entity NCOL1 NCOL2 kDim kOut LIMIT IMAX CSYSID EPTO SORT n1 n2 n3 KCS &#x0421;LOCAL CSKP PXAXS CART TAN SQRT EXP COS XOR DISTEN E EN NELEM NXAX CS LESIZE ABS CDSY NEXT ARG1 ARG5 NXTH PLNSOL /IMAGE L LSTR LARC cs_num LFILLT BSPLIN AESIZE SYMM PLESOL NARG LENG ITEM ELIST TEXT CHRVAL *VABS JKI ACEL TRUE CASE CASE SWITCH pi DEBUGOFF RESTORE txt pstxt /INQUIRE PAR_SAVE JOIN Comp ETABLE GETRESLT ETAB FIRST ESEL SCAT COLUMN</Keywords>
+            <Keywords name="Words2">*SET *DIM *ASK *VREAD *use *GET *VGET *VOPER *MOPER MPTEMP MPDATA EQ GE LE FLST P51X _RETURN _STATUS ARRAY ASUM LSUM GSUM AREA AL TABLE CHAR CM CMSEL *MSG numeration par_a n_a UY ROTY FY MY KY NY Y YC THZX *VLEN *VCOL DEG *VFILL *MFOURI SOLVE polynom ParM NUM R ALL COUNT ARNEXT TB TBTEMP TBPT NLGEOM PXYPL OUTRES i VAL1 VAL3 Par1 Par2 ENTNUM IT1NUM IT2NUM NROW Par3 JMAX Var1 Var2 Var3 VALUE EQV KABS1 KABS2 KABS3 Fname label *TREAD CYLIN FACT1 FACT2 FACT3 RMORE NXYPL /INPUT LMESH CONST *TOPER *VITRP *VWRITE Name ARG2 APPEND AMESH VMESH TUBE2D ACCAT LCCAT MSHKEY PLANE42 SHELL63 LSWRITE LSSOLVE *MWRITE ITEMY STRING ANUM VALCHR PARM IJK KIJ SFTRAN mac *SREAD /PSEARCH STRCAT INIT ARGS</Keywords>
+            <Keywords name="Words3">/PREP7 /SOL /NUMBER /POST1 NOSTART /CLEAR START FINISH *ABSET *ABCHECK *ABFINISH /PMACRO /FILNAM /TITLE /REPLOT /UNITS *AFUN REAL MAT TYPE ESYS NE *DEL DELETE NOPR CSDELE ADELE LDELE KDELE VDELE VOLU par_v n_v AND CMDELE NUMMRG HIGH /UIS /NERR /PNUM /PSYMB DENS lines_bound lines_bound2 COPY ET RAMP MULT IMMED /NOPR /GOPR PWR SOLV SUM TRAN MAX MAXD LMAX LOC U NONE VLNEXT SFA SFL PRES MISO DA D OFF KEYOPT ramberg_osgood CENT LOOP iend Oper Oper1 Oper2 ParR Par Func Item1 Item2 plot_controls DSORT KABSR NSKIP KCN FACTR /OUTPUT /PBC even_odd RCON ATTR TERM *EXIT ALPX TUNIF SFE /FILNAME INRES FILE SET SAVE STOP EXIT CYCLE *CYCLE /SOLU DIV par_r /ESHAPE SOLU RSYS TEMP NOOR DL BFA GPLOT ASYMM /DELETE /ANG EPLOT /AUTO Otype /MKDIR /AN3D ADD SUB *VFUN *MFUN *VSCFUN *VFACT IKJ KJI k_si DK SFEDELE SFLDELE CP CE LSCLEAR RF PIPE20 FALSE DEBUGON END_Of_MACRO /DSCALE StrArray DIRECTORY /DIRECTORY FILESDEL ARG3 /CWD Lab Item GATH ROW PREPARE</Keywords>
+            <Keywords name="Words4">*ELSE *ELSEIF THEN GT ABGT KP NUMSTR BOPTN BTOL KSEL LSEL LSLA KSLL LSLK ASEL ALLSEL OR area_bound lines_kp_bound par_kp n_kp NODE par_n n_n UZ ROTZ FZ MZ RAD KZ NZ z ZC THXY S DIM NDNEXT NLIST KPNEXT PORIG tub_grou_model area_sel_loc_corr EX /DEBUG /EOF istep Base1 Base2 KLOOP NINC KMAX NSLE NSLL NSEL Ext SPHE DISTND DISTKP N NROTAT NORIG tgm_rigid_plastic NXTL NSLK BFUNIF TREF K KBETW F FDELE COMP ESLN ESLA NFIELD ITEMZ NSLA round NOT ARROW *VMASK JIK ke_si VSEL ASLV COMBIN39 PIPE60 ESLL debug_settings ERASE LAST PROCESS ARG4 SELECTED PLANE</Keywords>
+        </KeywordLists>
+        <Styles>
+            <WordsStyle name="DEFAULT" styleID="11" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="FOLDEROPEN" styleID="12" fgColor="800040" bgColor="FFFFFF" fontName="" fontStyle="1" />
+            <WordsStyle name="FOLDERCLOSE" styleID="13" fgColor="800040" bgColor="FFFFFF" fontName="" fontStyle="1" />
+            <WordsStyle name="KEYWORD1" styleID="5" fgColor="00B6BF" bgColor="FFFFFF" fontName="" fontStyle="1" />
+            <WordsStyle name="KEYWORD2" styleID="6" fgColor="8000FF" bgColor="FFFFFF" fontName="" fontStyle="1" />
+            <WordsStyle name="KEYWORD3" styleID="7" fgColor="FF00FF" bgColor="FFFFFF" fontName="" fontStyle="1" />
+            <WordsStyle name="KEYWORD4" styleID="8" fgColor="FF6A22" bgColor="FFFFFF" fontName="" fontStyle="1" />
+            <WordsStyle name="COMMENT" styleID="1" fgColor="FFFF00" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="COMMENT LINE" styleID="2" fgColor="189A01" bgColor="FFFFFF" fontName="" fontStyle="1" />
+            <WordsStyle name="NUMBER" styleID="4" fgColor="800040" bgColor="FFFFFF" fontName="" fontStyle="2" />
+            <WordsStyle name="OPERATOR" styleID="10" fgColor="0000A0" bgColor="FFFFFF" fontName="" fontStyle="1" />
+            <WordsStyle name="DELIMINER1" styleID="14" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+            <WordsStyle name="DELIMINER2" styleID="15" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="4" />
+            <WordsStyle name="DELIMINER3" styleID="16" fgColor="000000" bgColor="FFFFFF" fontName="" fontStyle="0" />
+        </Styles>
+    </UserLang>
+</NotepadPlus>

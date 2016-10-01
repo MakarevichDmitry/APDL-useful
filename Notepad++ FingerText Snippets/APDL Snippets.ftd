@@ -1,0 +1,371 @@
+vwrite
+GLOBAL
+*VWRITE, $[![(opt)$[0[Par1, Par2, Par3, ... , PAR19]0]|$[0[ArrayName]0](1)]!]
+($[![(opt)$[0[(cha)formatF]0]|$[0[(cha)formatC]0]]!])
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+vscfun
+GLOBAL
+*VSCFUN, $[![ParR]!], $[![Func]!], $[![Par1]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+vread
+GLOBAL
+*VREAD, $[![ParR]!], $[![Fname]!], $[![Ext]!], , $[![(opt)IJK|IKJ|JIK|JKI|KIJ|KJI|]!], $[![n1]!], $[![n2]!], $[![n3]!], $[![NSKIP]!]
+($[![(opt)$[0[(cha)formatF]0]|$[0[(cha)formatC]0]]!])
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+voper
+GLOBAL
+*VOPER, $[![ParR]!], $[![Par1]!], $[![Oper]!], $[![Par2]!], $[![CON1, CON2]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+vmask
+GLOBAL
+*VMASK, $[![Par]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+vlen
+GLOBAL
+*VLEN, $[![NROW]!], $[![NINC]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+viterp
+GLOBAL
+*VITRP, $[![ParR]!], $[![ParT]!], $[![ParI]!], $[![ParJ]!], $[![ParK]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+vget
+GLOBAL
+*VGET, $[![Par]!], $[![Entity]!], $[![ENTNUM]!], $[![Item1]!], $[![IT1NUM]!], $[![Item2]!], $[![IT2NUM]!], $[![KLOOP]!]
+$[0[]0][>END<]!$[FingerTextData FingerTextData]@#
+vfun
+GLOBAL
+*VFUN, $[![ParR]!], $[![Func]!], $[![Par1]!], $[![CON1, CON2, CON3]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+vfill
+GLOBAL
+*VFILL, $[![ParR]!], $[![Func]!], $[![CON1]!], $[![CON2]!], $[![CON3]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+vfact
+GLOBAL
+*VFACT, $[![FACTR]!], $[![FACT1]!], $[![FACT2]!], $[![FACT3]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+vcol
+GLOBAL
+*VCOL, $[![NCOL1]!], $[![NCOL2]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+vabs
+GLOBAL
+*VABS, $[![KABSR]!], $[![KABS1]!], $[![KABS2]!], $[![KABS3]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+use
+GLOBAL
+*use, $[![Name]!], $[![ARG1, ARG2, ... , AR18]!]
+[>END<]!$[FingerTextData FingerTextData]@#
+tread
+GLOBAL
+*TREAD, $[![Par]!], $[![Fname]!], $[![Ext]!], , $[![NSKIP]!]
+[>END<]!$[FingerTextData FingerTextData]@#
+toper
+GLOBAL
+*TOPER, $[![ParR]!], $[![Par1]!], $[![Oper]!], $[![Par2]!], $[![FACT1]!], $[![FACT2]!], $[![CON1]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+switch
+GLOBAL
+*SET, sc_par_num, $[![VALUE]!]
+*DIM, sc_par_values, ARRAY, sc_par_num
+sc_par_values( 1 ) = $[![VALUES]!]
+
+*CREATE, CASE, mac
+	$[0[]0]
+*END
+*use, SWITCH.mac, $[![ParameterName]!]
+[>END<]!$[FingerTextData FingerTextData]@#
+s
+GLOBAL
+*SET, $[![Par]!], $[0[VALUE]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+round
+GLOBAL
+*use, round.mac, $[![Parameter]!], $[![decimal]!]
+$[![Parameter]!] = _RETURN
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+ramberg
+GLOBAL
+*SET, ro_num, $[![VALUE_1]!]   ! число различных материалов
+*DIM, ro_lnr, ARRAY, ro_num, 2 ! ( ,1) - E, ( ,2) - mu
+ro_lnr( 1, 1 ) = $[![E1,  E2, ... ,  En ]!]
+ro_lnr( 1, 2 ) = $[![mu1, mu2, ... , muN ]!]
+
+! переключатель задания свойств (0 - только линейные, 1 - линейные и нелинейные)
+*SET, ro_switch, $[![(opt)0|$[0[(cha)_ro_switch_1]0]]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+ps1
+GLOBAL
+ps_save( 1, ps_save_i ) = '$[![(key)PASTE]!]' $ ps_save_i = ps_save_i + 1
+$[0[]0][>END<]!$[FingerTextData FingerTextData]@#
+ps0
+GLOBAL
+*SET, ps_par_cnt, $[![VALUE]!]
+*DIM, ps_save, STRING, 32, ps_par_cnt
+
+*SET, ps_save_i, 1
+ps_save( 1, ps_save_i ) = '$[![your_first_parameter]!]' $ ps_save_i = ps_save_i + 1
+$[0[]0][>END<]!$[FingerTextData FingerTextData]@#
+ps
+GLOBAL
+*use, PAR_SAVE.mac, $[![(opt)'SAVE'|'RESTORE'|'ERASE'|'FILESDEL']!]
+$[0[]0][>END<]!$[FingerTextData FingerTextData]@#
+open
+GLOBAL
+*CFOPEN, $[![Fname]!], $[![Ext]!],, $[![(opt)APPEND|]!]
+$[0[]0]
+*CFCLOS
+[>END<]!$[FingerTextData FingerTextData]@#
+mwrite
+GLOBAL
+*MWRITE, $[![ParR]!], $[![Fname]!], $[![Ext]!], , $[![(opt)IJK|IKJ|JIK|JKI|KIJ|KJI|]!], $[![n1]!], $[![n2]!], $[![n3]!]
+($[![(opt)$[0[(cha)formatF]0]|$[0[(cha)formatC]0]]!])
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+moper
+GLOBAL
+*MOPER, $[![ParR]!], $[![Par1]!], $[![Oper]!], $[![Par2]!], $[![Par3]!], $[![kDim]!], ,$[![kOut]!], $[![LIMIT]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+mfun
+GLOBAL
+*MFUN, $[![ParR]!], $[![(opt)COPY|TRAN]!], $[![Par1]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+mfouri
+GLOBAL
+*MFOURI, $[![Oper]!], $[![COEFF]!], $[![MODE]!], $[![ISYM]!], $[![THETA]!], $[![CURVE]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+input
+GLOBAL
+/INPUT, $[![Fname]!], $[![Ext]!], , $[![(opt)LINE_NUMBER|:label]!], $[![(opt)0|1]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+if
+GLOBAL
+*IF $[![(cha)_ifExpr]!] $[![(opt)$[0[(cha)_ifExpr]0]| ]!]
+	$[0[]0]
+
+*ENDIF
+[>END<]!$[FingerTextData FingerTextData]@#
+get
+GLOBAL
+*GET, $[![Par]!], $[![Entity]!], $[![ENTNUM]!], $[![Item1]!], $[![IT1NUM]!], $[![Item2]!], $[![IT2NUM]!]
+$[0[]0][>END<]!$[FingerTextData FingerTextData]@#
+formatF
+GLOBAL
+$[0[(opt)$[0[(cha)_fF_INTEGER]0]|$[0[(cha)_fF_FLOAT]0]|$[0[(cha)_fF_EXPONENT]0]|$[0[(cha)_fF_CHARACTER]0]|$[0[(cha)_fF_SPACE]0]]0][>END<]!$[FingerTextData FingerTextData]@#
+formatC
+GLOBAL
+$[0[(opt)$[0[(cha)_fC_INTEGER]0]|$[0[(cha)_fC_FLOAT]0]|$[0[(cha)_fC_EXPONENT]0]|$[0[(cha)_fC_CHARACTER]0]|$[0[(cha)_fC_SPACE]0]]0][>END<]!$[FingerTextData FingerTextData]@#
+foldermain
+GLOBAL
+!{ ! $[![(opt)И_С_Х_О_Д_Н_Ы_Е___Д_А_Н_Н_Ы_Е|К_О_Д|]!]
+$[0[]0]
+!} ! (ВСЁ, что ВЫШЕ) $[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+folderid
+GLOBAL
+!{ !         $[![(opt)Характеристики Материалов|Параметры Сетки КЭ|Нагрузки и Граничные Условия]!]
+$[0[]0]
+!} 
+[>END<]!$[FingerTextData FingerTextData]@#
+foldercode
+GLOBAL
+!{ !     $[![(opt)Г Е О М Е Т Р И Я|МАТЕРИАЛ|С Е Т К А   К Э|НАГРУЗКИ]!]
+$[0[]0]
+!} 
+[>END<]!$[FingerTextData FingerTextData]@#
+folder
+GLOBAL
+!{ ! $[![Name]!]
+$[0[]0]
+!} ! (ВСЁ, что ВЫШЕ) $[![Name]!]
+[>END<]!$[FingerTextData FingerTextData]@#
+flst
+GLOBAL
+FLST, $[![NFIELD]!], $[![NARG]!], $[![TYPE]!], $[![(opt)NOOR|ORDER]!], $[![LENG]!]
+FITEM, $[![NFIELD]!], $[![ITEM, ITEMY, ITEMZ]!]
+$[![ANSCMD]!], P51X
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+fitem
+GLOBAL
+FITEM, $[![NFIELD]!], $[![ITEM, ITEMY, ITEMZ]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+evenodd
+GLOBAL
+*use, evenodd.mac, $[![Parameter_1]!]
+$[![Parameter_2]!] = _RETURN
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+else
+GLOBAL
+$[![(opt)*ELSE|$[0[(cha)_ELSEIF]0]]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+dow
+GLOBAL
+*DOWHILE, $[![z]!]
+	$[0[]0]
+*ENDDO
+[>END<]!$[FingerTextData FingerTextData]@#
+do
+GLOBAL
+*DO, $[![i]!], $[![ibegin]!], $[![iend]!], $[![istep]!]
+	$[0[]0]
+*ENDDO
+[>END<]!$[FingerTextData FingerTextData]@#
+dim5
+GLOBAL
+*DIM, $[![Par]!], $[![(opt)ARR5|TAB5]!], $[![IMAX]!], $[![JMAX]!], $[![KMAX]!], $[![LMAX]!], $[![MMAX]!], $[![(cha)_dimPV]!], $[![(cha)_dimPV]!], $[![(cha)_dimPV]!], $[![(cha)_dimPV]!], $[![(cha)_dimPV]!], $[0[CSYSID]0]
+[>END<]
+!$[FingerTextData FingerTextData]@#
+dim4
+GLOBAL
+*DIM, $[![Par]!], $[![(opt)ARR4|TAB4]!], $[![IMAX]!], $[![JMAX]!], $[![KMAX]!], $[![LMAX]!], $[![(cha)_dimPV]!], $[![(cha)_dimPV]!], $[![(cha)_dimPV]!], $[![(cha)_dimPV]!], $[0[CSYSID]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+dim3
+GLOBAL
+*DIM, $[![Par]!], $[![(opt)ARRAY|TABLE]!], $[![IMAX]!], $[![JMAX]!], $[![KMAX]!], $[![(cha)_dimPV]!], $[![(cha)_dimPV]!], $[![(cha)_dimPV]!], $[0[CSYSID]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+dim
+GLOBAL
+*DIM, $[![Par]!], $[![(opt)ARRAY|TABLE|CHAR|STRING]!], $[![IMAX]!], $[![JMAX]!], $[![KMAX]!]
+[>END<]!$[FingerTextData FingerTextData]@#
+del
+GLOBAL
+*DEL, $[![(opt)$[0[ArrayName]0],, NOPR|ALL|ALL, _PRM|, _PRM|, PRM_]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+create
+GLOBAL
+*CREATE, $[![Fname]!], $[![Ext]!]
+	$[0[]0]
+*END
+[>END<]!$[FingerTextData FingerTextData]@#
+clear
+GLOBAL
+FINISH
+/CLEAR, $[![(opt)NOSTART|START]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+ba
+GLOBAL
+! ретурнай
+[>END<]!$[FingerTextData FingerTextData]@#
+afun
+GLOBAL
+*AFUN, $[![(opt)RAD|DEG]!]
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+_ro_switch_1
+GLOBAL
+1
+*SET, ro_m_switch, $[![(opt)0|1]!]  ! переключатель материала (0 - отечественный, 1 - импортный)
+*SET, ro_model, $[![(opt)'MISO'|]!] ! модель материала
+*DIM, ro_se_ty, ARRAY, ro_num, 2, 2 ! ( ,1,1) - предел текучести при растяжении, ( ,2,1) - относительная деформация при данном напряжении
+*DIM, ro_se_tu, ARRAY, ro_num, 2, 2 ! ( ,1,1) - предел прочности при растяжении, ( ,2,1) - относительная деформация при данном напряжении
+ro_se_ty( 1, 1, 1 ) = $[![Sty1,   Sty2, ... ,   StyN]!]
+ro_se_ty( 1, 2, 1 ) = $[![EPSty1, EPSty2, ... , EPStyN]!]
+ro_se_tu( 1, 1, 1 ) = $[![Stu1,   Stu2, ... ,   StuN]!]
+ro_se_tu( 1, 2, 1 ) = $[![EPStu1, EPStu2, ... , EPStuN]!]
+*SET, ro_points, $[![(opt)20|value_01]!]  ! число точек кривой деформирования
+*SET, ro_exten, $[![(opt)1|value_02]!]    ! коэффициент предела прочности продления кривой деформирования
+*SET, ro_begin, $[![(opt)0.15|value_03]!] ! коэффициент предела прочности для значения первой точки кривой деформирования
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+_ifelExpr2
+GLOBAL
+, $[![(opt)AND|OR|XOR]!], $[![VAL3]!], $[![(cha)_ifOper]!], $[![VAL4]!][>END<]
+[>END<]!$[FingerTextData FingerTextData]@#
+_ifelExpr
+GLOBAL
+, $[![VAL1]!], $[![(cha)_ifOper]!], $[![VAL2]!][>END<]!$[FingerTextData FingerTextData]@#
+_ifOper
+GLOBAL
+$[![(opt)EQ|NE|LT|GT|LE|GE|ABLT|ABGT]!][>END<]!$[FingerTextData FingerTextData]@#
+_ifExpr
+GLOBAL
+, $[![VAL1]!], $[![(cha)_ifOper]!], $[![VAL2]!], $[![(cha)_ifBase]!][>END<]!$[FingerTextData FingerTextData]@#
+_ifBase
+GLOBAL
+$[![(opt)THEN|AND|OR|XOR|:label|STOP|EXIT|CYCLE]!]$[![]!][>END<]
+!$[FingerTextData FingerTextData]@#
+_getKpLOC
+GLOBAL
+LOC, $[![(opt)X|Y|Z]!]$[0[]0][>END<]!$[FingerTextData FingerTextData]@#
+_getKpATTR
+GLOBAL
+ATTR, $[![(opt)MAT|TYPE|REAL|ESYS|NODE|ELEM]!]$[0[]0][>END<]!$[FingerTextData FingerTextData]@#
+_getKP
+GLOBAL
+KP, $[0[KPnumber]0], $[1[(opt)$[0[(cha)_getKpLOC]0]|$[0[(cha)_getKpATTR]0]|KSEL|NXTH|NXTL|DIV]1]$[0[]0][>END<]!$[FingerTextData FingerTextData]@#
+_fF_SPACE
+GLOBAL
+$[![repeat]!]X$[![]!][>END<]!$[FingerTextData FingerTextData]@#
+_fF_INTEGER
+GLOBAL
+$[![repeat]!]I$[![width]!][>END<]!$[FingerTextData FingerTextData]@#
+_fF_FLOAT
+GLOBAL
+$[![repeat]!]F$[![width]!].$[![decimal]!][>END<]!$[FingerTextData FingerTextData]@#
+_fF_EXPONENT
+GLOBAL
+$[![repeat]!]E$[![width]!].$[![decimal]!][>END<]!$[FingerTextData FingerTextData]@#
+_fF_CHARACTER
+GLOBAL
+$[![repeat]!]A$[![width]!][>END<]!$[FingerTextData FingerTextData]@#
+_fC_SPACE
+GLOBAL
+%$[![repeat]!]X$[![]!][>END<]!$[FingerTextData FingerTextData]@#
+_fC_INTEGER
+GLOBAL
+%$[![width]!]I$[![]!][>END<]!$[FingerTextData FingerTextData]@#
+_fC_FLOAT
+GLOBAL
+%$[![width]!].$[![decimal]!]F$[![]!][>END<]!$[FingerTextData FingerTextData]@#
+_fC_EXPONENT
+GLOBAL
+%$[![width]!].$[![decimal]!]E$[![]!][>END<]!$[FingerTextData FingerTextData]@#
+_fC_CHARACTER
+GLOBAL
+%$[![width]!]C$[![]!][>END<]!$[FingerTextData FingerTextData]@#
+_dimPV
+GLOBAL
+$[![(opt)TIME|X|Y|Z|TEMP|PRESSURE|VELOCITY|SECTOR]!][>END<]!$[FingerTextData FingerTextData]@#
+_ELSEIF
+GLOBAL
+*ELSEIF$[![(cha)_ifelExpr]!]$[0[(opt)|$[0[(cha)_ifelExpr2]0]]0][>END<]!$[FingerTextData FingerTextData]@#
+1vread
+GLOBAL
+*VREAD, $[![ParR]!], $[![Fname]!], $[![Ext]!], , JIK, $[![JMAX]!], $[![IMAX]!], $[![KMAX]!], $[![NSKIP]!]
+($[![JMAX]!]$[![(opt)F|E]!]$[![width]!].$[![decimal]!])
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+1mwrite
+GLOBAL
+*MWRITE, $[![ParR]!], $[![Fname]!], $[![Ext]!], , JIK, $[![JMAX]!], $[![IMAX]!], $[![KMAX]!]
+($[![JMAX]!]$[![(opt)F|E]!]$[![width]!].$[![decimal]!])
+$[0[]0]
+[>END<]!$[FingerTextData FingerTextData]@#
+1get
+GLOBAL
+*GET, $[![Par]!], $[![(opt)NODE|ELEM|$[0[(cha)_getKP]0]|LINE|AREA|VOLU|CDSY|RCON]!]$[0[]0][>END<]!$[FingerTextData FingerTextData]@#

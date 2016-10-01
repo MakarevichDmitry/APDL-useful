@@ -1,0 +1,15 @@
+﻿! Макрос RealFromArrayRCall.mac является неотъемлемой частью макроса RealFromArray.mac
+! RealFromArrayRCall.mac - типовой код, вынесенный в отдельный макрос.
+!
+R, rfa_RCNum, rfa_R(1), rfa_R(2), rfa_R(3), rfa_R(4), rfa_R(5), rfa_R(6)
+*IF , rfa_CyclesCnt, GT, 1, THEN ! при количестве циклов больше одного (что равнозначно
+				            !  числу вещественных постоянных больше шести) производится
+                            !  добавление командой RMORE в цикле остальных вещественных
+                                                                          !  постоянных
+	*DO, rfa_i, 1, rfa_CyclesCnt-1, 1
+		RMORE, rfa_R(rfa_i*6+1), rfa_R(rfa_i*6+2), rfa_R(rfa_i*6+3), rfa_R(rfa_i*6+4), rfa_R(rfa_i*6+5), rfa_R(rfa_i*6+6)
+	*ENDDO
+*ENDIF
+rfa_RCNum = rfa_RCNum + 1 ! после добавления в систему вещественной постоянной
+		  !  производится увеличение номера вещественной постоянной на единицу
+ 
